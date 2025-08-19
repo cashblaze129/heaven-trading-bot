@@ -1,0 +1,56 @@
+[package]
+name = "heaven-trading-bot"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Solana dependencies
+solana-client = "1.17"
+solana-sdk = "1.17"
+solana-program = "1.17"
+solana-transaction-status = "1.17"
+
+# Heaven integration
+heaven-integration-sdk = "0.1.0"
+
+# SPL token dependencies
+spl-token = "4.0"
+spl-token-2022 = "0.9"
+spl-associated-token-account = "2.2"
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Configuration
+toml = "0.8"
+config = "0.14"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# HTTP client
+reqwest = { version = "0.11", features = ["json"] }
+
+# Database (for storing trade history and configs)
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "sqlite"] }
+
+# WebSocket for real-time data
+tokio-tungstenite = "0.21"
+
+# CLI
+clap = { version = "4.4", features = ["derive"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Math utilities
+num-traits = "0.2"

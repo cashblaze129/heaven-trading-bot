@@ -1,0 +1,74 @@
+[solana]
+rpc_url = "https://api.mainnet-beta.solana.com"
+ws_url = "wss://api.mainnet-beta.solana.com"
+commitment = "confirmed"
+wallet_path = "~/.config/solana/id.json"
+max_retries = 3
+retry_delay_ms = 1000
+
+[heaven]
+program_id = "heaven_program_id_here"
+protocol_config_version = 1
+chainlink_sol_usd_feed = "GvDMxPzN1sCj7L26YDK2HnjMRmcCVK6yGVSHx7KC8dL3"
+light_token_mint = "88aUGeGXFNaEyzL48fkzSPWUPhJr3gWrMDD8EH8tCb1"
+max_slippage = 0.05
+compute_unit_limit = 200000
+compute_unit_price = 1000000
+
+[sniper]
+enabled = true
+max_sol_per_trade = 0.1
+min_liquidity_sol = 0.01
+max_slippage = 0.1
+gas_optimization = true
+frontrun_protection = true
+auto_approve = false
+blacklisted_tokens = []
+whitelisted_tokens = []
+min_market_cap = 0.0
+max_market_cap = 1000000.0
+volume_threshold = 1000.0
+launch_detection_delay_ms = 100
+
+[copy_trader]
+enabled = true
+max_sol_per_trade = 0.05
+copy_percentage = 0.1
+max_traders = 10
+min_trader_balance = 1.0
+min_trader_profit = 0.05
+blacklisted_traders = []
+whitelisted_traders = []
+delay_ms = 500
+auto_approve = false
+
+[bundler]
+enabled = true
+max_bundle_size = 10
+max_bundle_time_ms = 1000
+priority_fee_multiplier = 1.5
+target_block = null
+auto_submit = true
+bundle_validation = true
+
+[trading]
+max_concurrent_trades = 5
+trade_timeout_secs = 30
+profit_taking_percentage = 0.2
+stop_loss_percentage = 0.1
+max_daily_trades = 100
+max_daily_loss_sol = 1.0
+risk_per_trade = 0.02
+auto_rebalance = true
+
+[database]
+url = "sqlite:trading_bot.db"
+max_connections = 10
+connection_timeout_secs = 30
+
+[monitoring]
+enabled = true
+metrics_port = 8080
+health_check_interval_secs = 60
+alert_webhook = null
+log_level = "info"
